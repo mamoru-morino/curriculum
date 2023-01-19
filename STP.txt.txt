@@ -19,14 +19,29 @@ A　Switch3がルートポート
 
 また、各回答の理由を併せて明記してください。
 
-　・Switch1：ブロッキングポート
-　　ルートポート、指定ポートのどちらにも選出されなかったから
 
-　・Switch2：指定ポート
-　　ルートブリッジに一番近いから
+　・Switch1　F0/1：DP
+　ルートポートの対面だから
+　・Switch1　F0/2：RP
+　ルートブリッジに一番近いから（Switch3）
 
-　・Switch3：ルートブリッジ
-　　ブリッジプライオリティが一番小さいから
 
-　・Switch4：ルートポート
-　　ルートブリッジに一番近いから
+　・Switch2　F0/1：RP
+　ルートパスコストが一番小さいから
+　Switch3→Switch1→Switch2＝119
+　Switch3→Switch4→Switch2＝200
+　・Switch2　F0/2：BP
+　RPにもDPにも選ばれなかったから
+
+
+　・Switch3　E0/1：DP
+　ルートブリッジだから（Switch3）
+　・Switch3　E0/2：DP
+　ルートブリッジだから（Switch3）
+
+
+　・Switch4　E0/1：DP
+　Switch2、20481　Switch4、8193
+　8193のほうが小さいのでSwitch4がDP
+　・Switch4　E0/2：RP
+　ルートブリッジに一番近いから（Switch3）
